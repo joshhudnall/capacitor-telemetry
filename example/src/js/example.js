@@ -1,6 +1,5 @@
 import { Telemetry } from 'capacitor-telemetry';
 
-window.testEcho = () => {
-    const inputValue = document.getElementById("echoInput").value;
-    Telemetry.echo({ value: inputValue })
+window.getTelemetry = async () => {
+    document.getElementById('output').innerHTML = JSON.stringify(await Telemetry.getData());
 }

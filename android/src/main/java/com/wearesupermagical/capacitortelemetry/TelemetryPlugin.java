@@ -6,17 +6,22 @@ import com.getcapacitor.PluginCall;
 import com.getcapacitor.PluginMethod;
 import com.getcapacitor.annotation.CapacitorPlugin;
 
+import org.json.JSONObject;
+
 @CapacitorPlugin(name = "Telemetry")
 public class TelemetryPlugin extends Plugin {
 
     private Telemetry implementation = new Telemetry();
 
     @PluginMethod
-    public void echo(PluginCall call) {
-        String value = call.getString("value");
-
+    public void getData(PluginCall call) {
         JSObject ret = new JSObject();
-        ret.put("value", implementation.echo(value));
+        ret.put(
+            "value",
+            new JSONObject(
+                implementation.getData(this.bridge.getContext())
+            )
+        );
         call.resolve(ret);
     }
 }
