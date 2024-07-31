@@ -76,5 +76,6 @@
     "android": {
       "src": "android"
     }
-  }
+  },
+  "prepare": "npm run build"
 }
