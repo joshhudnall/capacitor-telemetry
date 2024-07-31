@@ -21,26 +21,26 @@ public class Telemetry {
 
     public Map<String, Object> getData(Context context) {
         return new HashMap<String, Object>() {{
-            put("deviceInfo", new HashMap<String, Object>() {{
-                put("deviceName", deviceName());
-                put("deviceUuid", deviceUuid(context));
-                put("deviceIsSecure", deviceIsSecure());
-                put("deviceModel", deviceModel());
-                put("deviceBatteryLevel", deviceBatteryLevel(context));
-                put("deviceBatteryState", deviceBatteryState(context));
-                put("deviceOs", deviceOs());
-                put("deviceOsVersion", deviceOsVersion());
-                put("deviceScreenBrightness", deviceScreenBrightness());
-                put("deviceAudioLevel", deviceAudioLevel());
-                put("deviceIsGuidedAccessEnabled", deviceIsGuidedAccessEnabled());
+            put("device", new HashMap<String, Object>() {{
+                put("name", deviceName());
+                put("uuid", deviceUuid(context));
+                put("isSecure", deviceIsSecure());
+                put("model", deviceModel());
+                put("batteryLevel", deviceBatteryLevel(context));
+                put("batteryState", deviceBatteryState(context));
+                put("os", deviceOs());
+                put("osVersion", deviceOsVersion());
+                put("screenBrightness", deviceScreenBrightness());
+                put("audioLevel", deviceAudioLevel());
+                put("isGuidedAccessEnabled", deviceIsGuidedAccessEnabled());
             }});
-            put("appInfo", new HashMap<String, Object>() {{
-                put("appVersion", appVersion(context));
-                put("appBuild", appBuild(context));
-                put("appBundleId", appBundleId(context));
+            put("app", new HashMap<String, Object>() {{
+                put("version", appVersion(context));
+                put("build", appBuild(context));
+                put("bundleId", appBundleId(context));
             }});
-            put("networkInfo", new HashMap<String, Object>() {{
-                put("networkConnection", networkConnection(context));
+            put("network", new HashMap<String, Object>() {{
+                put("connection", networkConnection(context));
             }});
         }};
     }
