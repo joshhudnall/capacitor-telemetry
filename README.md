@@ -13,25 +13,34 @@ npx cap sync
 
 <docgen-index>
 
-* [`echo(...)`](#echo)
+* [`getData()`](#getdata)
+* [Interfaces](#interfaces)
 
 </docgen-index>
 
 <docgen-api>
 <!--Update the source file JSDoc comments and rerun docgen to update the docs below-->
 
-### echo(...)
+### getData()
 
 ```typescript
-echo(options: { value: string; }) => Promise<{ value: string; }>
+getData() => Promise<{ value: TelemetryData; }>
 ```
 
-| Param         | Type                            |
-| ------------- | ------------------------------- |
-| **`options`** | <code>{ value: string; }</code> |
-
-**Returns:** <code>Promise&lt;{ value: string; }&gt;</code>
+**Returns:** <code>Promise&lt;{ value: <a href="#telemetrydata">TelemetryData</a>; }&gt;</code>
 
 --------------------
+
+
+### Interfaces
+
+
+#### TelemetryData
+
+| Prop          | Type                                                                                                                                                                                                                                              |
+| ------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| **`device`**  | <code>{ name?: string; uuid?: string; isSecure?: boolean; model?: string; batteryLevel?: number; batteryState?: string; os?: string; osVersion?: string; screenBrightness?: number; audioLevel?: number; isGuidedAccessEnabled?: string; }</code> |
+| **`app`**     | <code>{ version?: string; build?: string; bundleId?: string; }</code>                                                                                                                                                                             |
+| **`network`** | <code>{ connection?: string; }</code>                                                                                                                                                                                                             |
 
 </docgen-api>

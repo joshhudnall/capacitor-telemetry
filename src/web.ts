@@ -1,10 +1,9 @@
 import { WebPlugin } from '@capacitor/core';
 
-import type { TelemetryPlugin } from './definitions';
+import type {TelemetryData, TelemetryPlugin} from './definitions';
 
 export class TelemetryWeb extends WebPlugin implements TelemetryPlugin {
-  async echo(options: { value: string }): Promise<{ value: string }> {
-    console.log('ECHO', options);
-    return options;
+  async getData(): Promise<{value: TelemetryData}> {
+    throw this.unimplemented('Not implemented on web.');
   }
 }
